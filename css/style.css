@@ -119,12 +119,13 @@ a { color: inherit; }
 /* 7. Projets ------------------------------------------------------------- */
 .project { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; padding-block: clamp(2rem, 5vw, 3.5rem); border-top: 1px solid var(--line); }
 .project:first-of-type { border-top: 0; padding-top: 0; }
-.project--reverse .project__media { order: 2; }
+.project--wide { grid-template-columns: minmax(0, 1fr); }
+.project--wide .project__body { max-width: 46rem; }
 
 .project__media { background: var(--tint); padding: clamp(1rem, 3vw, 2rem); border-radius: 6px; display: grid; gap: 1rem; }
 .project__media img { width: 100%; border-radius: 4px; border: 1px solid rgba(21, 21, 21, 0.14); background: #fff; }
 .project__media--phones { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(0.5rem, 1.5vw, 1rem); }
-.project__secondary { width: 78%; justify-self: end; }
+.project__media--phones .project__hero { grid-column: 1 / -1; }
 
 .project__body { display: grid; gap: 1rem; align-content: start; }
 .project__meta { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
@@ -142,6 +143,25 @@ a { color: inherit; }
 .note { font-size: 0.95rem; border-left: 2px solid var(--ink); padding-left: 1rem; color: var(--muted); }
 .note strong { color: var(--ink); font-weight: 600; }
 .project__links { margin-top: 0.5rem; }
+
+/* Comparateur avant / après */
+.compare__tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.compare__tabs button { font: 500 0.85rem var(--font-body); color: var(--ink); background: transparent; border: 1px solid var(--ink); border-radius: 999px; padding: 0.3rem 0.95rem; cursor: pointer; transition: background-color 0.2s, color 0.2s; }
+.compare__tabs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.compare__stage { position: relative; aspect-ratio: 1800 / 1125; overflow: hidden; border-radius: 4px; border: 1px solid rgba(21, 21, 21, 0.14); background: #fff; --pos: 50%; }
+.compare__stage .compare__img { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 0; object-fit: cover; }
+.compare__img--after { clip-path: inset(0 0 0 var(--pos)); }
+.compare__label { position: absolute; top: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--ink); color: var(--paper); padding: 0.15rem 0.6rem; border-radius: 999px; pointer-events: none; }
+.compare__label--before { left: 0.6rem; }
+.compare__label--after { right: 0.6rem; }
+.compare__handle { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: var(--ink); pointer-events: none; }
+.compare__handle::after { content: "\2194"; position: absolute; top: 50%; left: 50%; width: 2.5rem; height: 2.5rem; margin: -1.25rem 0 0 -1.25rem; display: grid; place-items: center; background: var(--ink); color: var(--paper); border-radius: 50%; font-size: 1.1rem; }
+.compare__range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; }
+.compare__range:focus-visible ~ .compare__handle { outline: 2px solid var(--accent); outline-offset: 2px; }
+.compare__range:focus-visible ~ .compare__handle::after { outline: 2px solid var(--accent); outline-offset: 3px; }
+.compare__caption { font-size: 0.85rem; color: var(--muted); }
+html:not(.js) .compare__tabs, html:not(.js) .compare__range, html:not(.js) .compare__handle, html:not(.js) .compare__label, html:not(.js) .compare__caption { display: none; }
+html:not(.js) .compare__img--after { clip-path: none; }
 
 /* 8. Défis techniques ---------------------------------------------------- */
 .challenge { padding-block: clamp(2.5rem, 5vw, 3.5rem); border-top: 1px solid var(--line); }
@@ -189,8 +209,7 @@ a { color: inherit; }
 
 /* 12. Adaptation mobile et tablette ------------------------------------- */
 @media (max-width: 960px) {
-  .project, .project--reverse { grid-template-columns: 1fr; }
-  .project--reverse .project__media { order: 0; }
+  .project { grid-template-columns: 1fr; }
   .challenge__cols { grid-template-columns: 1fr; gap: 1.75rem; }
 }
 

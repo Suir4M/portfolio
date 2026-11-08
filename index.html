@@ -34,7 +34,7 @@
       <div class="wrap">
         <p class="eyebrow">Portfolio</p>
         <h1 id="hero-titre">Développeur Web</h1>
-        <p class="hero__lead">Je construis des sites en HTML, CSS et JavaScript, sans framework&nbsp;: un jeu de devinettes, une refonte de site de club et un hommage interactif à Van Gogh.</p>
+        <p class="hero__lead">Je construis des sites en HTML, CSS et JavaScript, sans framework&nbsp;: une collection de jeux de devinettes, une refonte de site de club et un hommage interactif à Van Gogh.</p>
         <p class="hero__interest">Ce qui me plaît dans le web&nbsp;: une idée devient une page que l’on peut ouvrir, tester et partager avec un simple lien.</p>
         <p class="hero__actions">
           <a class="button" href="#projets">Découvrir mes projets</a>
@@ -55,38 +55,53 @@
           <p class="section__intro">Trois projets personnels, trois identités visuelles. Les captures ci-dessous sont de vraies captures des projets.</p>
         </header>
 
-        <article class="project reveal" style="--tint:#ead7d6" aria-labelledby="p1-titre">
+        <article class="project reveal" style="--tint:#e3dcc3" aria-labelledby="p1-titre">
           <div class="project__media project__media--phones">
-            <figure><img src="assets/img/marveldle-menu.webp" width="700" height="1140" loading="lazy" alt="Marveldle : menu avec les trois modes de jeu Classic, Quote et Blur"></figure>
-            <figure><img src="assets/img/marveldle-classic.webp" width="700" height="1140" loading="lazy" alt="Marveldle, mode Classic : tableau d’indices colorés après quatre essais"></figure>
-            <figure><img src="assets/img/marveldle-blur.webp" width="700" height="1140" loading="lazy" alt="Marveldle, mode Blur : portrait flouté d’un personnage et deux mauvaises réponses"></figure>
+            <figure class="project__hero"><img src="assets/img/maaarsdle-hub.webp" width="1800" height="1125" loading="lazy" alt="Maaaarsdle : page d’accueil avec le titre, le nombre d’univers et de modes, et les cartes Wizardle et Disneydle"></figure>
+            <figure><img src="assets/img/maaarsdle-menu.webp" width="700" height="895" loading="lazy" alt="Wizardle : menu des modes de jeu (Classique, Citation, Flou, Patronus, Sortilège, Potion, Lieu, Baguette)"></figure>
+            <figure><img src="assets/img/maaarsdle-classic.webp" width="700" height="895" loading="lazy" alt="Wizardle, mode Classique : tableau d’indices colorés après quatre essais"></figure>
+            <figure><img src="assets/img/maaarsdle-lien.webp" width="700" height="895" loading="lazy" alt="Wizardle, mode Lien : quatre portraits de personnages dont il faut trouver le point commun"></figure>
           </div>
           <div class="project__body">
-            <p class="project__meta"><span class="project__index">01</span> Jeu · Version démo</p>
-            <h3 id="p1-titre">Marveldle</h3>
-            <p>Un jeu de devinettes dans l’esprit des «&nbsp;&#8209;dle&nbsp;»&nbsp;: trouver un personnage Marvel à partir d’indices, ou à partir d’un portrait de plus en plus net.</p>
+            <p class="project__meta"><span class="project__index">01</span> Jeux · Projet de fan, non lucratif</p>
+            <h3 id="p1-titre">Maaaarsdle</h3>
+            <p>Une collection de jeux de devinettes sur des personnages&nbsp;: Harry Potter, Disney, Marvel, The Vampire Diaries et The White Lotus. Chaque univers a son site, son ambiance et ses modes, mais tous reposent sur un moteur de jeu commun.</p>
             <h4>Fonctionnalités</h4>
             <ul class="list">
-              <li>Mode Classic&nbsp;: sept indices comparés à chaque essai, en trois états (exact, partiel, faux), avec une flèche pour l’année.</li>
-              <li>Mode Blur&nbsp;: le portrait s’éclaircit en neuf paliers à chaque mauvaise réponse.</li>
-              <li>Recherche avec suggestions, insensible aux accents et à la casse.</li>
-              <li>34 personnages décrits dans un simple fichier texte.</li>
-              <li>Mode Quote préparé, volontairement désactivé tant qu’il manque des citations.</li>
+              <li>Cinq univers, 21 modes de jeu annoncés sur l’accueil et environ 420 personnages décrits dans des fichiers de données.</li>
+              <li>Mode Classique&nbsp;: des indices comparés en trois états (exact, partiel, faux), avec une flèche pour les valeurs numériques.</li>
+              <li>Mode Flou, Citation, et pour Harry Potter Patronus, Sortilège, Potion, Lieu et Baguette.</li>
+              <li>Mode Lien&nbsp;: quatre personnages, un point commun à trouver.</li>
+              <li>Interface en français et en anglais, avec mémorisation du choix.</li>
+              <li>Accueil généré depuis un fichier de configuration&nbsp;: ajouter un univers revient à ajouter un bloc.</li>
             </ul>
-            <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-            <p class="project__links"><span class="muted">Pas de lien public pour le moment.</span></p>
+            <p class="note"><strong>État actuel&nbsp;:</strong> Marvel est l’univers le moins avancé, avec seulement le mode Classique.</p>
+            <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>JSON</li><li>GitHub Pages</li></ul>
+            <p class="project__links">Viens jouer sur : <a class="text-link" href="https://suir4m.github.io/Maaaarsdle/" rel="noopener">Maaaarsdle</a></p>
           </div>
         </article>
 
-        <article class="project project--reverse reveal" style="--tint:#f2d9c9" aria-labelledby="p2-titre">
-          <div class="project__media">
-            <figure><img src="assets/img/yeti-accueil.webp" width="1800" height="1125" loading="lazy" alt="Yeti 85 : page d’accueil avec le titre et un mur d’escalade illustré dont les prises sont des liens"></figure>
-            <figure class="project__secondary"><img src="assets/img/yeti-horaires.webp" width="1800" height="1125" loading="lazy" alt="Yeti 85 : planning de la semaine en grille, avec les créneaux colorés par public"></figure>
-          </div>
+        <article class="project project--wide reveal" style="--tint:#f2d9c9" aria-labelledby="p2-titre">
+          <div class="project__media compare" data-compare>
+      <div class="compare__tabs" role="group" aria-label="Page à comparer">
+        <button type="button" aria-pressed="true" data-before="assets/img/yeti-accueil-avant.webp" data-after="assets/img/yeti-accueil-apres.webp" data-alt-before="Site actuel du club : bandeau photo, menu noir et articles sur trois colonnes" data-alt-after="Refonte : titre « Escalade tranquille, ambitions intrépides » et mur d’escalade illustré">Accueil</button>
+        <button type="button" aria-pressed="false" data-before="assets/img/yeti-horaires-avant.webp" data-after="assets/img/yeti-horaires-apres.webp" data-alt-before="Site actuel du club : horaires écrits en paragraphes, puis calendrier mensuel" data-alt-after="Refonte : planning de la semaine en grille colorée selon le public">Horaires</button>
+        <button type="button" aria-pressed="false" data-before="assets/img/yeti-inscriptions-avant.webp" data-after="assets/img/yeti-inscriptions-apres.webp" data-alt-before="Site actuel du club : long texte d’inscription suivi de listes de tarifs" data-alt-after="Refonte : page « Grimper chez nous » avec titre sur photo et boutons d’action">Inscriptions</button>
+      </div>
+      <div class="compare__stage">
+        <img class="compare__img" src="assets/img/yeti-accueil-avant.webp" width="1800" height="1125" loading="lazy" alt="Site actuel du club : bandeau photo, menu noir et articles sur trois colonnes">
+        <img class="compare__img compare__img--after" src="assets/img/yeti-accueil-apres.webp" width="1800" height="1125" loading="lazy" alt="Refonte : titre « Escalade tranquille, ambitions intrépides » et mur d’escalade illustré">
+        <span class="compare__label compare__label--before" aria-hidden="true">Avant</span>
+        <span class="compare__label compare__label--after" aria-hidden="true">Après</span>
+        <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Curseur de comparaison, de l’ancien site à la refonte">
+        <span class="compare__handle" aria-hidden="true"></span>
+      </div>
+      <p class="compare__caption">Avant&nbsp;: le site actuel du club. Après&nbsp;: ma proposition de refonte. Glissez le curseur, ou utilisez les flèches du clavier.</p>
+    </div>
           <div class="project__body">
             <p class="project__meta"><span class="project__index">02</span> Site web · Concept de refonte, non officiel</p>
             <h3 id="p2-titre">Yeti 85</h3>
-            <p>Une proposition de refonte du site d’un club d’escalade de La Roche-sur-Yon&nbsp;: quatre pages pour aider un visiteur à trouver comment s’inscrire et quand venir.</p>
+            <p>Une proposition de refonte du site d’un club d’escalade de La Roche-sur-Yon&nbsp;: quatre pages pour aider un visiteur à trouver comment s’inscrire et quand venir. Le comparateur montre trois pages, avant et après.</p>
             <h4>Fonctionnalités</h4>
             <ul class="list">
               <li>Accueil avec un mur d’escalade en SVG&nbsp;: chaque prise est un lien vers le bon parcours (débutant, enfant, autonome, bénévole).</li>
@@ -95,7 +110,7 @@
               <li>Déploiement prévu sur GitHub Pages.</li>
             </ul>
             <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS Grid et subgrid</li><li>JavaScript</li><li>SVG</li></ul>
-            <p class="project__links"><a class="text-link" href="https://github.com/Suir4M/YetiGrimpe" rel="noopener">Code source sur GitHub</a></p>
+            <p class="project__links">Prends ton abonnement sur : <a class="text-link" href="https://suir4m.github.io/YetiGrimpe/" rel="noopener">YétiGrimpe</a></p>
           </div>
         </article>
 
@@ -115,7 +130,7 @@
             </ul>
             <p class="note"><strong>État actuel&nbsp;:</strong> les pages d’œuvres sont des pages d’attente, le sélecteur FR / EN est seulement visuel et la neuvième étoile n’est pas encore positionnée.</p>
             <ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li></ul>
-            <p class="project__links"><a class="text-link" href="https://github.com/Suir4M/Van-Gogh" rel="noopener">Code source sur GitHub</a></p>
+            <p class="project__links">Découvre l'univers de Van Gogh sur : <a class="text-link" href="https://suir4m.github.io/Van-Gogh/" rel="noopener">Van Gogh - Une Constellation</a></p>
           </div>
         </article>
       </div>
@@ -131,36 +146,66 @@
 
         <article class="challenge reveal" aria-labelledby="d1-titre">
           <header class="challenge__head">
-            <p class="challenge__project">Marveldle <span class="chip">Identifié dans le code</span></p>
-            <h3 id="d1-titre">Ne jamais tirer un personnage sans portrait</h3>
+            <p class="challenge__project">Maaaarsdle <span class="chip">Identifié dans le code</span></p>
+            <h3 id="d1-titre">Une énigme de point commun qui n’a presque qu’une seule bonne réponse</h3>
           </header>
           <div class="challenge__cols">
             <div>
               <h4>Le défi</h4>
-              <p>Les personnages sont décrits dans un fichier texte, les portraits sont dans un dossier, et seul le nom de fichier les relie. Il suffit d’ajouter un personnage sans photo pour créer une manche du mode Blur où l’image ne s’affiche pas&nbsp;: impossible de deviner.</p>
+              <p>Dans le mode Lien, le joueur voit quatre personnages et doit trouver ce qui les relie. Les liens sont construits automatiquement à partir des données (espèce, maison, rôle, livre, année de naissance). Quatre personnages pris au hasard ont donc souvent plusieurs points communs valables, et le joueur peut avoir raison avec une réponse que le jeu n’attendait pas. De plus, essayer tous les groupes de quatre parmi des dizaines de personnages représente beaucoup de combinaisons pour un téléphone.</p>
             </div>
             <div>
               <h4>La solution</h4>
-              <p>Le nom du personnage est converti en nom de fichier («&nbsp;Tony Stark (Iron Man)&nbsp;» devient <code>tony-stark-iron-man.jpg</code>). Au lancement du mode Blur, chaque portrait est chargé en test&nbsp;: seuls ceux qui s’affichent sont gardés, et le résultat est mémorisé. Si aucun portrait n’est trouvé, un message explique quel dossier vérifier. Ailleurs, une image cassée est remplacée par les initiales du personnage.</p>
+              <p>Le jeu tire d’abord un lien, parmi ceux qui ont entre 4 et 40 membres (le genre n’est jamais tiré, il est trop large). Il liste les groupes de quatre membres de ce lien, puis ne garde que ceux qui ont le moins d’autres liens valables, et en tire un au hasard. Au-delà de 3&nbsp;000 groupes possibles, il travaille sur un échantillon aléatoire. Toute réponse qui s’applique aux quatre personnages gagne, et chaque erreur indique combien de personnages sur quatre correspondent. Le code évite aussi un piège&nbsp;: les lettres des espèces et des rôles se ressemblent (M signifie Moldu pour l’espèce, Mangemort pour le rôle), donc chaque lien teste le bon champ.</p>
             </div>
             <div>
               <h4>Le résultat</h4>
-              <p>Ajouter un personnage demande une ligne de données et une image, et un oubli ne casse plus une partie. Les 34 personnages actuels ont bien leur portrait, vérifié en lisant le dossier.</p>
+              <p>Les énigmes sont plus nettes, souvent avec un seul lien valable, et les réponses justes mais inattendues sont acceptées. À la victoire, le jeu affiche les autres liens possibles. Le nombre de calculs reste borné, ce qui garde le mode fluide sur mobile.</p>
             </div>
           </div>
-          <pre class="code" tabindex="0" aria-label="Extrait de code JavaScript"><code>// js/blur-game.js
-const tests = CHARACTERS
-  .filter(character => !config.exclusions.includes(character.name))
-  .map(character => new Promise(resolve => {
-    const image = new Image();
-    image.onload = () => resolve(character);
-    image.onerror = () => resolve(null);
-    image.src = imagePath(character);
-  }));
-return Promise.all(tests).then(results => {
-  available = results.filter(Boolean);
-  return available;
-});</code></pre>
+          <pre class="code" tabindex="0" aria-label="Extrait de code JavaScript"><code>// game/Wizardle/lien-game.js
+cible = choisirAleatoirement(LIENS.filter(l => l.tirable));
+const candidats = groupesDeQuatre([...cible.membres]);
+
+let meilleur = Infinity;
+let retenus = [];
+candidats.forEach(groupe => {
+  const nb = LIENS.filter(l => lienValide(l, groupe)).length;
+  if (nb < meilleur) { meilleur = nb; retenus = [groupe]; }
+  else if (nb === meilleur) retenus.push(groupe);
+});
+quatre = choisirAleatoirement(retenus);</code></pre>
+        </article>
+
+        <article class="challenge reveal" aria-labelledby="d5-titre">
+          <header class="challenge__head">
+            <p class="challenge__project">Maaaarsdle <span class="chip">Identifié dans le code</span></p>
+            <h3 id="d5-titre">Traduire en anglais des jeux dont les textes sont écrits dans le code</h3>
+          </header>
+          <div class="challenge__cols">
+            <div>
+              <h4>Le défi</h4>
+              <p>Les moteurs de jeu écrivent leurs textes en français directement dans le JavaScript, et la logique compare les personnages par leur nom français. Traduire les noms à la main aurait risqué de casser la recherche et les comparaisons, et réécrire les neuf modes d’un coup était trop lourd.</p>
+            </div>
+            <div>
+              <h4>La solution</h4>
+              <p>Un module de traduction charge deux fichiers JSON, retient la langue choisie dans le navigateur et fournit <code>t("clé")</code> pour le nouveau code. Pour les moteurs existants, un «&nbsp;pont de compatibilité&nbsp;», isolé et documenté dans <code>I18N.md</code>, remplace les textes à l’écran d’après un dictionnaire. Un <code>MutationObserver</code> traite aussi les éléments ajoutés plus tard, et le texte d’origine est mémorisé pour ne jamais traduire une traduction. Côté logique, un nom anglais saisi est reconverti en nom français avant toute comparaison.</p>
+            </div>
+            <div>
+              <h4>Le résultat</h4>
+              <p>L’interface passe d’une langue à l’autre sans toucher aux règles du jeu. Lors de mes tests, la recherche «&nbsp;Severus&nbsp;» propose «&nbsp;Severus Snape&nbsp;» en anglais, et les titres du tableau d’indices passent en anglais. Le pont n’est pas parfait&nbsp;: le patronus «&nbsp;Biche&nbsp;» est resté en français. Le fichier de documentation prévoit de le retirer progressivement, mode par mode.</p>
+            </div>
+          </div>
+          <pre class="code" tabindex="0" aria-label="Extrait de code JavaScript"><code>// game/i18n.js
+const observer = new MutationObserver(records => {
+  if (applyingLegacyTranslations || currentLanguage === DEFAULT_LANGUAGE) return;
+  for (const record of records) {
+    for (const node of record.addedNodes) {
+      if (node.nodeType === Node.ELEMENT_NODE) translateLegacyTree(node);
+    }
+  }
+});
+observer.observe(document.body, { childList: true, subtree: true });</code></pre>
         </article>
 
         <article class="challenge reveal" aria-labelledby="d2-titre">
@@ -249,12 +294,12 @@ url("../img/banniere1.jpg")          /* 3866185 : relatif à la feuille de style
         <header class="section__head reveal">
           <p class="eyebrow">03</p>
           <h2 id="competences-titre">Compétences</h2>
-          <p class="section__intro">Uniquement ce qui apparaît dans le code de ces trois projets.</p>
+          <p class="section__intro">Présentes dans les différents projet.</p>
         </header>
         <dl class="skills reveal">
           <div>
             <dt>Langages</dt>
-            <dd><ul><li>HTML5</li><li>CSS3</li><li>JavaScript (ES6+)</li></ul></dd>
+            <dd><ul><li>HTML5</li><li>CSS3</li><li>JavaScript (ES6+)</li><li>JSON</li></ul></dd>
           </div>
           <div>
             <dt>Front-end</dt>
@@ -263,13 +308,11 @@ url("../img/banniere1.jpg")          /* 3866185 : relatif à la feuille de style
               <li>Propriétés CSS personnalisées</li>
               <li>SVG en ligne</li>
               <li>Animations et transitions CSS</li>
-              <li>Manipulation du DOM, sans framework</li>
+              <li>Manipulation du DOM, sans framework (dont <code>MutationObserver</code>, <code>fetch</code> et promesses)</li>
+              <li>Internationalisation français et anglais, avec fichiers de traduction</li>
+              <li>Stockage local du navigateur (<code>localStorage</code>)</li>
               <li>Accessibilité de base (HTML sémantique, ARIA, focus visible, réduction des animations)</li>
             </ul></dd>
-          </div>
-          <div>
-            <dt>Back-end</dt>
-            <dd><p class="muted">Aucun pour l’instant&nbsp;: les trois projets sont des sites statiques.</p></dd>
           </div>
           <div>
             <dt>Outils et environnement</dt>
@@ -300,7 +343,7 @@ url("../img/banniere1.jpg")          /* 3866185 : relatif à la feuille de style
 
   <footer class="site-footer">
     <div class="wrap site-footer__inner">
-      <p>Portfolio statique en HTML, CSS et JavaScript. Yeti 85 est un projet personnel, non officiel.</p>
+      <p>Portfolio statique en HTML, CSS et JavaScript. Maaaarsdle est un projet de fan non lucratif, Yeti 85 un projet personnel non officiel. Les noms et visuels cités appartiennent à leurs propriétaires.</p>
       <a class="text-link" href="#haut">Retour en haut</a>
     </div>
   </footer>
