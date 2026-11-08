@@ -1,0 +1,208 @@
+/* 1. Polices (auto-hébergées) ------------------------------------------- */
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("../assets/fonts/instrument-serif-latin-400-normal.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("../assets/fonts/instrument-serif-latin-400-italic.woff2") format("woff2");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/inter-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+
+/* 2. Variables ----------------------------------------------------------- */
+:root {
+  --paper: #f6f4ef;
+  --ink: #151515;
+  --muted: #62625c;
+  --line: #dcd8cd;
+  --accent: #2f45d4;
+
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --gutter: clamp(20px, 5vw, 48px);
+  --max: 1120px;
+  --header-height: 68px;
+}
+
+/* 3. Base ---------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.0625rem/1.65 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, h4, p, ul, dl, dd, figure { margin: 0; }
+ul { padding: 0; list-style: none; }
+code { font-family: var(--font-mono); font-size: 0.86em; background: rgba(21, 21, 21, 0.06); padding: 0.1em 0.35em; border-radius: 4px; }
+::selection { background: var(--accent); color: #fff; }
+
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.muted { color: var(--muted); }
+
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: 30;
+  background: var(--ink); color: var(--paper); padding: 0.6rem 1rem; border-radius: 6px;
+}
+.skip-link:focus { top: 12px; }
+
+/* 4. Mise en page -------------------------------------------------------- */
+.wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+
+.section { padding-block: clamp(4.5rem, 10vw, 8rem); }
+.section--ruled { border-top: 1px solid var(--line); }
+.section__head { margin-bottom: clamp(2.5rem, 6vw, 4.5rem); max-width: 40rem; }
+.section__head h2 { font: 400 clamp(2.4rem, 5vw, 3.6rem)/1.05 var(--font-display); letter-spacing: -0.01em; }
+.section__intro { margin-top: 1rem; color: var(--muted); }
+.section__intro strong { color: var(--ink); font-weight: 600; }
+
+.eyebrow { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.9rem; }
+
+.button {
+  display: inline-block; text-decoration: none; font-weight: 500; font-size: 0.95rem;
+  background: var(--ink); color: var(--paper); padding: 0.85rem 1.5rem; border-radius: 999px;
+  border: 1px solid var(--ink); transition: background-color 0.2s, color 0.2s;
+}
+.button:hover { background: transparent; color: var(--ink); }
+
+.text-link { font-weight: 500; text-decoration: underline; text-decoration-color: var(--line); text-decoration-thickness: 1px; text-underline-offset: 0.3em; transition: text-decoration-color 0.2s; }
+.text-link:hover { text-decoration-color: currentColor; }
+
+/* 5. En-tête ------------------------------------------------------------- */
+.site-header {
+  position: sticky; top: 0; z-index: 20; height: var(--header-height);
+  background: rgba(246, 244, 239, 0.92); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.brand { font-weight: 600; text-decoration: none; letter-spacing: -0.01em; }
+.nav { display: flex; gap: 2rem; font-size: 0.95rem; }
+.nav a { text-decoration: none; color: var(--muted); padding-block: 0.3rem; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+.nav a:hover, .nav a.is-current { color: var(--ink); border-bottom-color: var(--ink); }
+.nav-toggle { display: none; font: 500 0.9rem var(--font-body); background: none; color: inherit; border: 1px solid var(--ink); border-radius: 999px; padding: 0.4rem 1rem; cursor: pointer; }
+
+/* 6. Accueil ------------------------------------------------------------- */
+.hero { position: relative; min-height: calc(100svh - var(--header-height)); display: flex; align-items: center; padding-block: 4rem 7rem; }
+.hero h1 { font: 400 clamp(3.6rem, 12vw, 9rem)/0.95 var(--font-display); letter-spacing: -0.025em; margin-bottom: 2rem; }
+.hero__lead { max-width: 36rem; font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem); line-height: 1.55; }
+.hero__interest { max-width: 36rem; margin-top: 1rem; color: var(--muted); }
+.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin-top: 2.25rem; }
+
+.scroll-hint {
+  position: absolute; left: var(--gutter); bottom: 2rem; display: flex; align-items: center; gap: 0.9rem;
+  font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none;
+}
+@media (min-width: 1200px) { .scroll-hint { left: calc((100vw - var(--max)) / 2 + var(--gutter)); } }
+.scroll-hint__line { position: relative; width: 1px; height: 44px; background: var(--line); overflow: hidden; }
+.scroll-hint__line::after { content: ""; position: absolute; left: 0; top: -16px; width: 1px; height: 16px; background: var(--ink); animation: scroll-hint 2.2s ease-in-out infinite; }
+
+/* 7. Projets ------------------------------------------------------------- */
+.project { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; padding-block: clamp(2rem, 5vw, 3.5rem); border-top: 1px solid var(--line); }
+.project:first-of-type { border-top: 0; padding-top: 0; }
+.project--reverse .project__media { order: 2; }
+
+.project__media { background: var(--tint); padding: clamp(1rem, 3vw, 2rem); border-radius: 6px; display: grid; gap: 1rem; }
+.project__media img { width: 100%; border-radius: 4px; border: 1px solid rgba(21, 21, 21, 0.14); background: #fff; }
+.project__media--phones { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(0.5rem, 1.5vw, 1rem); }
+.project__secondary { width: 78%; justify-self: end; }
+
+.project__body { display: grid; gap: 1rem; align-content: start; }
+.project__meta { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.project__index { color: var(--ink); margin-right: 0.6rem; }
+.project h3 { font: 400 clamp(2.1rem, 4vw, 3rem)/1.05 var(--font-display); letter-spacing: -0.01em; }
+.project h4 { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.5rem; }
+
+.list { display: grid; gap: 0.55rem; }
+.list li { position: relative; padding-left: 1.2rem; }
+.list li::before { content: ""; position: absolute; left: 0; top: 0.78em; width: 0.5rem; height: 1px; background: var(--ink); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.tags li { font-size: 0.82rem; border: 1px solid var(--line); border-radius: 999px; padding: 0.2rem 0.8rem; }
+
+.note { font-size: 0.95rem; border-left: 2px solid var(--ink); padding-left: 1rem; color: var(--muted); }
+.note strong { color: var(--ink); font-weight: 600; }
+.project__links { margin-top: 0.5rem; }
+
+/* 8. Défis techniques ---------------------------------------------------- */
+.challenge { padding-block: clamp(2.5rem, 5vw, 3.5rem); border-top: 1px solid var(--line); }
+.challenge:first-of-type { border-top: 0; padding-top: 0; }
+.challenge__head { margin-bottom: 2rem; max-width: 46rem; }
+.challenge__project { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.challenge h3 { font: 400 clamp(1.8rem, 3.4vw, 2.5rem)/1.12 var(--font-display); letter-spacing: -0.01em; }
+.chip { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; text-transform: none; border: 1px solid var(--ink); border-radius: 999px; padding: 0.1rem 0.7rem; }
+.chip--solid { background: var(--ink); color: var(--paper); }
+
+.challenge__cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3rem); }
+.challenge h4 { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+.challenge__cols p { font-size: 0.98rem; }
+
+.code { margin-top: 2rem; overflow-x: auto; background: var(--ink); color: #ece9e1; border-radius: 6px; padding: 1.25rem 1.5rem; font: 400 0.82rem/1.7 var(--font-mono); tab-size: 2; }
+.code code { background: none; padding: 0; font-size: inherit; }
+
+/* 9. Compétences --------------------------------------------------------- */
+.skills > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 1rem 3rem; padding-block: 1.75rem; border-top: 1px solid var(--line); }
+.skills > div:last-child { border-bottom: 1px solid var(--line); }
+.skills dt { font: 400 1.7rem/1.2 var(--font-display); }
+.skills ul { display: grid; gap: 0.4rem; }
+
+/* 10. Contact et pied de page ------------------------------------------- */
+.contact { display: grid; gap: 1.75rem; max-width: 40rem; }
+.contact__text { font: 400 clamp(1.6rem, 3vw, 2.2rem)/1.25 var(--font-display); }
+
+.site-footer { border-top: 1px solid var(--line); padding-block: 2rem; font-size: 0.9rem; color: var(--muted); }
+.site-footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem 2rem; }
+
+/* 11. Animations --------------------------------------------------------- */
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+@keyframes scroll-hint {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(64px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .scroll-hint__line::after { animation: none; top: 0; height: 100%; }
+}
+
+/* 12. Adaptation mobile et tablette ------------------------------------- */
+@media (max-width: 960px) {
+  .project, .project--reverse { grid-template-columns: 1fr; }
+  .project--reverse .project__media { order: 0; }
+  .challenge__cols { grid-template-columns: 1fr; gap: 1.75rem; }
+}
+
+@media (max-width: 720px) {
+  .js .nav-toggle { display: inline-block; }
+  .js .nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0;
+    padding: 0.5rem var(--gutter) 1rem; background: var(--paper); border-bottom: 1px solid var(--line);
+  }
+  .js .nav.is-open { display: flex; }
+  .js .nav a { padding-block: 0.85rem; border-bottom: 1px solid var(--line); }
+  .js .nav a:last-child { border-bottom: 0; }
+  .skills > div { grid-template-columns: 1fr; }
+  .hero { padding-bottom: 6rem; }
+}
